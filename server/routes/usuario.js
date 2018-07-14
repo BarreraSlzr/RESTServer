@@ -91,7 +91,7 @@ app.delete('/usuario/:id', (req, res) => {
             });
         }
 
-        if ( usuarioBorrado !== null || !usuarioBorrado.estado ) {
+        if ( usuarioBorrado === null || !usuarioBorrado.estado ) {
             return res.status( 400 ).json({
                 ok: false,
                 err: {
