@@ -92,7 +92,7 @@ app.delete('/usuario/:id', [verificarToken, verificarRol], (req, res) => {
             });
         }
 
-        if ( usuarioBorrado === null || !usuarioBorrado.estado ) {
+        if ( usuarioBorrado === null ) {
             return res.status( 400 ).json({
                 ok: false,
                 err: {
