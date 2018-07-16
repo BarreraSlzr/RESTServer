@@ -3,13 +3,13 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 
-
 // Body-parser
 const bodyparse = require('body-parser');
-app.use(bodyparse.urlencoded({ extended: false}));
-app.use(bodyparse.json());
+app.use( bodyparse.urlencoded({ extended: false }) );
+app.use( bodyparse.json() );
 
-app.use( require('./routes/usuario'));
+//Routes
+app.use( require('./routes/index') );
 
 mongoose.connect(process.env.URLDB, (err, res) => {
     if( err ) throw err;

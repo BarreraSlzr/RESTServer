@@ -12,4 +12,10 @@ if ( process.env.NODE_ENV === 'dev') {
 } else {
     urlDB = process.env.MONGODB_URL;
 }
+
+// ================
+// JWT -- Tokens 
+process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+process.env.TOKENSEED = process.env.TOKENSEED || 'seedDesarrollo';
+
 process.env.URLDB = urlDB;
